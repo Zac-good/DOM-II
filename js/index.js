@@ -34,3 +34,12 @@ busImg.addEventListener('pointerdown', function(event) {
         event.target.style.transform = "";
     }, 2000);
 }, false);
+
+// Map Image
+const mapImg = document.querySelector('.img-content img');
+const count = 360;
+mapImg.addEventListener('dblclick', function(event) {
+    event.target.style.transition = 'all 1s';
+    event.target.style.transform = `rotate(${count}deg)`;
+    count += 360;
+});
