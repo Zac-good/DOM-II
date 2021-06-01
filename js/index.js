@@ -14,3 +14,13 @@ body.addEventListener('click', function(event){
         event.target.style.background ="";
     }, 3000);
 },false);
+
+// Header
+const header = document.querySelector('header');
+header.addEventListener('mouseover', function(event){
+    event.currentTarget.style.background = 'red';
+    event.target.style.color = 'white'
+    setTimeout(function(){
+        event.target.style.color = "";
+}, 1000);
+}, false);
