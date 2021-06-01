@@ -24,3 +24,13 @@ header.addEventListener('mouseover', function(event){
         event.target.style.color = "";
 }, 1000);
 }, false);
+
+// Bus Image
+const busImg = document.querySelector('.intro img');
+busImg.addEventListener('pointerdown', function(event) {
+    event.target.style.transition = 'all 1s ease-out';
+    event.target.style.transform = 'scale(1.5)';
+    setTimeout(function(){
+        event.target.style.transform = "";
+    }, 2000);
+}, false);
