@@ -17,12 +17,12 @@ body.addEventListener('click', function(event){
 
 // Header
 const header = document.querySelector('header');
-header.addEventListener('mouseover', function(event){
+header.addEventListener('mouseenter', function(event){
     event.currentTarget.style.background = 'red';
     event.target.style.color = 'white'
     setTimeout(function(){
         event.target.style.color = "";
-}, 1000);
+    }, 1000);
 }, false);
 
 // Bus Image
@@ -36,10 +36,33 @@ busImg.addEventListener('pointerdown', function(event) {
 }, false);
 
 // Map Image
-const mapImg = document.querySelector('.img-content img');
+const mapImg = document.querySelector('.img-content img:nth-child(1)');
 const count = 360;
 mapImg.addEventListener('dblclick', function(event) {
     event.target.style.transition = 'all 1s';
     event.target.style.transform = `rotate(${count}deg)`;
-    count += 360;
 });
+
+// Canal Image
+const canalImg = document.querySelector('.img-fluid');
+canalImg.addEventListener('pointerover', function(event) {
+    event.target.style.transition = 'all 1s ease-out';
+    event.target.style.transform = 'scale(2)';
+    // console.log(event.target)
+    setTimeout(function(){
+        event.target.style.transform = "";
+    }, 1000);
+}, false)
+
+
+// Text content
+const textCont1 = document.querySelector('.content-section, .text-content');
+textCont1.addEventListener('mouseover', function(event) {
+    event.currentTarget.style.backgroundColor = 'green';
+    
+})
+
+const textCont2 = document.querySelector('section.inverse-content, .text-content');
+textCont2.addEventListener('click', function(event) {
+    event.target.style.backgroundColor = 'gold';
+})
